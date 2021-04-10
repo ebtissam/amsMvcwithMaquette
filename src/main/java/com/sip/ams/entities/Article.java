@@ -26,12 +26,37 @@ public class Article {
 	@Column(name = "price")
 	private float price;
 
+	@Column(name = "photoface")
+	private String photoface;
+	
+	@Column(name = "photoprofil")
+	private String photoprofil;
+	
+	
+	public String getPhotoface() {
+		return photoface;
+	}
+
+	public void setPhotoface(String photoface) {
+		this.photoface = photoface;
+	}
+
+	public String getPhotoprofil() {
+		return photoprofil;
+	}
+
+	public void setPhotoprofil(String photoprofil) {
+		this.photoprofil = photoprofil;
+	}
+
 	public Article() {
 	}
 
-	public Article(String label, float price) {
+	public Article(String label, float price, String photoface, String photoprofil) {
 		this.price = price;
 		this.label = label;
+		this.photoface = photoface;
+		this.photoprofil = photoprofil;
 	}
 
 	public void setId(long id) {
