@@ -18,9 +18,9 @@ import com.sip.ams.entities.Provider;
 public class ProviderControllerMVC {
 	static ArrayList<Provider> objs = new ArrayList<>();
 	static {
-		objs.add(new Provider("Samsung","Korea","samsung@gmail.com"));
-		objs.add(new Provider("HP","USA","hp@hotmail.com"));
-		objs.add(new Provider("Dell","USA","dell@hotmail.com"));
+		objs.add(new Provider("Samsung","Korea","samsung@gmail.com","tof1"));
+		objs.add(new Provider("HP","USA","hp@hotmail.com","tof2"));
+		objs.add(new Provider("Dell","USA","dell@hotmail.com","tof3"));
 	}
 	@RequestMapping("/list")
 	//@ResponseBody
@@ -47,7 +47,7 @@ public class ProviderControllerMVC {
 	@GetMapping("add")
 	public String addProviderGet(Model m)
 	{
-		m.addAttribute("provider", new Provider("ab","cd","a@gmail.com"));
+		m.addAttribute("provider", new Provider("ab","cd","a@gmail.com","tof"));
 		return "provider/addProvider";
 	}
 	
