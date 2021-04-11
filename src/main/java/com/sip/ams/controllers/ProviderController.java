@@ -27,9 +27,9 @@ public class ProviderController {
 	@GetMapping("list")
 	// @ResponseBody
 	public String listProviders(Model model) {
-		//List<Provider>providers = (List<Provider>) providerRepository.findAll();
+		List<Provider>providers = (List<Provider>) providerRepository.findAll();
 		
-		List<Provider>providers = (List<Provider>) providerRepository.findProviderByAddress("usa","hp");
+		//List<Provider>providers = (List<Provider>) providerRepository.findProviderByAddress("usa","hp");
 		/*if (ls.isEmpty())
 			ls = null;*/
 		

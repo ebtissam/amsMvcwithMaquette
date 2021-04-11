@@ -23,9 +23,11 @@ import com.sip.ams.repositories.ProviderRepository;
 @Controller
 @RequestMapping("/article/")
 public class ArticleController {
+	 @Autowired
 	private final ArticleRepository articleRepository;
+	 @Autowired
 	private final ProviderRepository providerRepository;
-    @Autowired
+   
     public ArticleController(ArticleRepository articleRepository, ProviderRepository providerRepository) {
         this.articleRepository = articleRepository;
         this.providerRepository = providerRepository;
@@ -34,6 +36,18 @@ public class ArticleController {
     @GetMapping("list")
     public String listArticles(Model model) {
     	List<Article>ls = (List<Article>) articleRepository.findAll();
+    	if(ls.isEmpty())
+    		ls = null;
+    	//model.addAttribute("articles", null);
+        model.addAttribute("articles",ls );
+        return "article/listArticles";
+    }
+    
+    @PostMapping("searchLabel")
+    public String findArticlesByLabel(@RequestParam("label") String label ,Model model) {
+    	
+    	
+    	List<Article>ls = (List<Article>) articleRepository.findArticlesByLabel(label.toLowerCase());
     	if(ls.isEmpty())
     		ls = null;
     	//model.addAttribute("articles", null);
