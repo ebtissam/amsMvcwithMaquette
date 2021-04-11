@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
     @Autowired
     private UserService userService;
+    
     @RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
     public ModelAndView login(){
         ModelAndView modelAndView = new ModelAndView();
@@ -41,7 +42,9 @@ public class LoginController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
+    	
         ModelAndView modelAndView = new ModelAndView();
+        
         User userExists = userService.findUserByEmail(user.getEmail());
         if (userExists != null) {
             bindingResult
