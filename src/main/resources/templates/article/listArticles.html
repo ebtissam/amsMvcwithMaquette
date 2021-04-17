@@ -60,10 +60,10 @@
 										<td th:text="${article.price}"></td>
 										<td th:text="${article.provider.name}"></td>
 										<td><a th:href="@{/article/edit/{id}(id=${article.id})}"
-											class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+											class="btn btn-primary"><i class="fa fa-pencil color-muted m-r-5"></i></a></td>
 										<td><a
 											th:href="@{/article/delete/{id}(id=${article.id})}"
-											class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+											class="btn btn-primary"><i class="fa fa-close color-danger"></i></a></td>
 									</tr>
 								</tbody>
 							</table>
