@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>list Providers</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="/image/png" sizes="16x16" href="/images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="/plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div th:replace="fragments/sidebar :: sidebar"/>
+
+<div class="content-body">
+
+            <div class="container-fluid mt-3">
+        <h3 align="center"> Update Article</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/article/edit/}" th:object="${article}" method="post">
+                        <div class="row">
+                        
+                           <input type="hidden" th:field="*{id}" class="form-control" />
+                        
+                            <div class="form-group col-md-6">
+                                <label for="label" class="col-form-label">Label</label> <input type="text" th:field="*{label}" class="form-control" id="label" placeholder="Label" /> <span th:if="${#fields.hasErrors('label')}" th:errors="*{label}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="price" class="col-form-label">Price</label> <input type="text" th:field="*{price}" class="form-control" id="price" placeholder="Price" /> <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group col-md-8">
+                             <label for="provider" class="col-form-label">Select Provider</label>
+                            <select name="providerId" class="form-control">
+							    <option  th:each="pr: ${providers}" 
+							    th:value="${pr.id}"
+							    th:text="${pr.name}" 
+							    th:selected="(${pr.id} == ${idProvider})"
+							     />
+							</select>
+							</div>
+                            
+                            
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Article">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
