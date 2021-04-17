@@ -1,24 +1,30 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Providers</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-	crossorigin="anonymous">
-<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
-</head>
+    <title>list Providers</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <!-- Favicon icon -->
+    <link rel="icon" type="/image/png" sizes="16x16" href="/images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="/plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
 <body>
-	<div class="container my-2">
+
+<div th:replace="fragments/header :: header"/>
+
+<div th:replace="fragments/sidebar :: sidebar"/>
+
+<div class="content-body">
+
+            <div class="container-fluid mt-3">
 		<div class="card">
 			<div class="card-body">
 			<div th:if="${providers==null or providers.empty}"><h2>No Providers yet!</h2></div>
@@ -63,7 +69,35 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div></div>
+	
+	
+	   <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="./plugins/chartist/js/chartist.min.js"></script>
+    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
 </body>
 
 

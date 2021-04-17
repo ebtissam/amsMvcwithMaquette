@@ -20,8 +20,7 @@ import java.util.*;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import javax.mail.MessagingException;
-import java.io.IOException;
+
 
 @Controller
 @RequestMapping("/accounts/")
